@@ -2,12 +2,15 @@
 # coding: utf-8
 
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__)
+Bootstrap(app)
 
 
 @app.route('/')
-def index():
+def home():
     return render_template('pages/index.html')
 
 

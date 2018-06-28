@@ -1,11 +1,22 @@
-{% extends 'layouts/default.html' %}
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Grandpy Bot - Contact{% endblock title %}
 
 {% block body %}
+<div class="container">
+    {% block navbar %}
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown"><a href="{{ url_for('home') }}" role="button">Home</a></li>
+        <li role="presentation" class="dropdown"><a href="{{ url_for('contact') }}" role="button">Contact</a></li>
+    </ul>
+    {% endblock navbar %}
 
-    <h1>Contact</h1>
-    <div>
-        <p>Auteur : Guillaume Pont</p>
-        <p>Github : <a href ='https://github.com/GuiThink/'>https://github.com/GuiThink/</a></p>
-    </div>
-
+    {% block content %}
+        <h1>Contact</h1>
+        <div>
+            <p>Auteur : Guillaume Pont</p>
+            <p>Github : <a href ='https://github.com/GuiThink/'>https://github.com/GuiThink/</a></p>
+        </div>
+    {% endblock content %}
+</div>
 {% endblock body %}
