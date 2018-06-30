@@ -11,17 +11,17 @@ Bootstrap(app)
 
 @app.route('/')
 def home():
-    return render_template('pages/index.html')
+    return render_template('pages/fr/index.html')
 
 
 @app.route('/contact')
 def contact():
-    return render_template('pages/contact.html')
+    return render_template('pages/fr/contact.html')
 
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('errors/404.html'), 404
+    return render_template('errors/fr/404.html'), 404
 
 
 if __name__ == "__main__":

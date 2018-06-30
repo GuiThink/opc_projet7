@@ -1,0 +1,29 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block doc %}
+<!DOCTYPE html>
+
+<html lang="fr">
+    {% block head %}
+    {{ super() }}
+        {% block metas %}
+        <meta charset="UTF-8">
+        {{ super() }}
+        {% endblock %}
+        <!-- Scripts -->
+        {% block scripts %}
+        {{ super() }}
+        {% endblock %}
+    {% endblock %}
+    <body>
+        <!-- Navigation Bar -->
+        {% block navbar %}
+            {% include 'shared/fr/_nav.html' %}
+        {% endblock %}
+        <!-- Main container -->
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
+{% endblock %}
