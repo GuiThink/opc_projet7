@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block content %}
+{% include '/shared/_nav.html' %}
+
+<!--Title -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1 id="title">GrandPy Bot, le papy-robot</h1>
+        </div>
+    </div>
+</div>
+
+<!--Form-->
+<div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="On va où ?" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="go">Go !</button>
+        </form>
+    </nav>
+</div>
+<div class="container">
+    <button id ="server_time">Server Time</button>
+    <div id="time">Time: </div>
+</div>
+
+{% endblock %}
