@@ -1,0 +1,73 @@
+@media (min-width: 320px) {
+  .container {
+      width: 320px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 9rem;
+    border-radius: .3rem;
+}
+
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    background-color : #f7c911;
+    align-self: flex-end;
+}
+
+.bot {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.bot:first-child {
+    margin-top: 2rem;
+}
+
+
+.time {
+    text-align: right;
+}
+
+.card-img-top {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    margin: auto;
+}
+
+.header-img {
+    height: 12rem;
+    width: 12rem;
+    margin: auto;
+}
