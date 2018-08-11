@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import time
 
-
 app = Flask(__name__)
 
 
@@ -26,21 +25,21 @@ def sign_up():
     return render_template('pages/form.html')
 
 
-@app.route('/process', methods=['POST'])
+@app.route('/user-question', methods=['POST'])
 def process():
+    question = request.form['question']
+    user = 'Rejeton'
+    img = '/static/img/anonym_img.png'
+    time = '17:15'
 
-    email = request.form['email']
-    name = request.form['name']
+    keyword = 'Paris'
+    response = 'Paris est situé en France, en Île de France.'
 
-    if name and email:
-        newName = name[::-1]
-        return jsonify({'name': newName})
+    if keyword in question:
+        return jsonify({'question': question, 'user': user, 'img': img, 'time': time, 'response': response})
 
     return jsonify({'error': 'Missing data!'})
 
 
-
-
 # if __name__ == "__main__":
 #     app.run()
-
