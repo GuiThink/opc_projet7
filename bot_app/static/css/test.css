@@ -14,3 +14,13 @@
     width: 960px;
   }
 }
+
+.list{
+    line-height: 25px;
+    margin:auto;
+    background-color: #2b669a;
+    margin-top: 5px;
+    color: white;
+    padding-left:10px;
+}
+
