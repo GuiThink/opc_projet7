@@ -14,11 +14,6 @@ def page_not_found(error):
     return render_template('errors/404.html'), 404
 
 
-@app.route('/form')
-def sign_up():
-    return render_template('pages/form.html')
-
-
 @app.route('/user-question', methods=['POST'])
 def process():
     quest = request.form['question']

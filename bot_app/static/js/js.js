@@ -57,24 +57,24 @@ $(document).ready(function() {
 
 
 
-                    //const newBotResp = $("<div class=\"row bot-wrapper justify-content-start\">"+
-                    //                "<div class=\"col-xs-12 col-md-8 col-lg-8\">"+
-                    //                    "<div class=\"row bot\">"+
-                    //                        "<div class=\"col-xs-4 col-md-0 col-lg-0\"></div>"+
-                    //                        "<div class=\"col-xs-4 col-md-3 col-lg-2\">"+
-                    //                            "<img class=\"card-img-top\" src=\"/static/img/papy_img.png\" alt=\"papy-robot\">"+
-                    //                        "</div>"+
-                    //                        "<div class=\"col-xs-4 col-md-0 col-lg-0\"></div>"+
-                    //                        "<div class=\"col-xs-12 col-md-9 col-lg-10\">"+
-                    //                            "<h5 class=\"card-title\">GrandPy</h5>"+
-                    //                            "<p class=\"card-text\">" + response + "</p>"+
-                    //                            "<p class=\"card-text bot-time small\">17:12</p>"+
-                    //                        "</div>"+
-                    //                    "</div>"+
-                    //                "</div>"+
-                    //            "</div>").hide().delay(1000).fadeIn(500);
+//const newBotResp = $("<div class=\"row bot-wrapper justify-content-start\">"+
+//                "<div class=\"col-xs-12 col-md-8 col-lg-8\">"+
+//                    "<div class=\"row bot\">"+
+//                        "<div class=\"col-xs-4 col-md-0 col-lg-0\"></div>"+
+//                        "<div class=\"col-xs-4 col-md-3 col-lg-2\">"+
+//                            "<img class=\"card-img-top\" src=\"/static/img/papy_img.png\" alt=\"papy-robot\">"+
+//                        "</div>"+
+//                        "<div class=\"col-xs-4 col-md-0 col-lg-0\"></div>"+
+//                        "<div class=\"col-xs-12 col-md-9 col-lg-10\">"+
+//                            "<h5 class=\"card-title\">GrandPy</h5>"+
+//                            "<p class=\"card-text\">" + response + "</p>"+
+//                            "<p class=\"card-text bot-time small\">17:12</p>"+
+//                        "</div>"+
+//                    "</div>"+
+//                "</div>"+
+//            "</div>").hide().delay(1000).fadeIn(500);
 
-                    //$chatBox.append(newBotResp);
+//$chatBox.append(newBotResp);
 
 
 

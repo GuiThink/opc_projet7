@@ -5,82 +5,57 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="jumbotron">
-                <img class="header-img" src="/static/img/papy_img.png" alt="papy-robot">
-                <h1 class="display-4">GrandPy, le papy robot</h1>
-                <p class="lead">Le robot qui se prend pour ton papy et te raconte des histoires à propos des lieux que tu lui indiques.</p>
-                <hr class="my-4">
-                <p>Entre l'adresse d'un lieu...et en avant les histoires !</p>
+            <div class="col" id="header">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <img class="header-img" src="/static/img/papy_img.png" alt="papy-robot">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-4">GrandPy, le papy robot</h1>
+                        <p class="lead">Le robot qui se prend pour ton papy et te raconte des histoires à propos des lieux que tu lui indiques.</p>
+                        <hr class="my-4">
+                        <p>Entre l'adresse d'un lieu...et en avant les histoires !</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="container bg-info" id="chat-box">
-                <div class="card bot col-xs-12 col-md-8">
-                    <img class="card-img-top" src="/static/img/papy_img.png" alt="papy-robot">
-                    <div class="card-body">
-                        <h5 class="card-title">GrandPy</h5>
-                        <p class="card-text">Que puis-je pour toi mon enfant ?</p>
-                        <p class="card-text time small">17:12</p>
-                    </div>
-                </div>
-                <div class="card user col-xs-12 col-md-8">
-                    <img class="card-img-top" src="/static/img/anonym_img.png" alt="rejeton">
-                    <div class="card-body">
-                        <h5 class="card-title">Rejeton</h5>
-                        <p class="card-text">Salut GrandPy ! Est-ce que tu connais l'adresse d'OpenClassrooms ?</p>
-                        <p class="card-text time small">17:15</p>
-                    </div>
-                </div>
-                <div class="card bot col-xs-12 col-md-8">
-                    <img class="card-img-top" src="/static/img/papy_img.png" alt="papy-robot">
-                    <div class="card-body">
-                        <h5 class="card-title">GrandPy</h5>
-                        <p class="card-text">Bien sûr mon poussin ! La voici : 7 cité Paradis, 75010 Paris.</p>
-                        <iframe id="google_map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=paris&key=AIzaSyBVNw4X-qj0cJ0fJghPTPDh2AfjNFBBcGM" allowfullscreen></iframe>
-                        <p class="card-text time small">17:16</p>
-                    </div>
-                </div>
-                <div class="card bot col-xs-12 col-md-8">
-                    <img class="card-img-top" src="/static/img/papy_img.png" alt="papy-robot">
-                    <div class="card-body">
-                        <h5 class="card-title">GrandPy</h5>
-                        <p class="card-text">...Mais t'ai-je déjà raconté l'histoire de ce quartier qui m'a vu en culottes courtes ?</p>
-                        <p class="card-text time small">17:17</p>
-                    </div>
-                </div>
-                <div class="card bot col-xs-12 col-md-8">
-                    <img class="card-img-top" src="/static/img/papy_img.png" alt="papy-robot">
-                    <div class="card-body">
-                        <h5 class="card-title">GrandPy</h5>
-                        <p class="card-text"> La cité Paradis est une voie publique située dans le 10e arrondissement de Paris. Elle est en forme de té, une branche débouche au 43 rue de Paradis, la deuxième au 57 rue d'Hauteville et la troisième en impasse.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus sur Wikipedia</a>
-                        <p class="card-text time small">17:18</p>
+        <div class="row" id="chat-wrapper">
+            <div class="col container bg-info" id="chat-box">
+                <div class="row bot-wrapper justify-content-start">
+                    <div class="col-xs-12 col-md-8 col-lg-8">
+                        <div class="row bot">
+                            <div class="col-xs-4 col-md-0 col-lg-0"></div>
+                            <div class="col-xs-4 col-md-3 col-lg-2">
+                                <img class="card-img-top" src="/static/img/papy_img.png" alt="papy-robot">
+                            </div>
+                            <div class="col-xs-4 col-md-0 col-lg-0"></div>
+                            <div class="col-xs-12 col-md-9 col-lg-10">
+                                <h5 class="card-title">GrandPy</h5>
+                                <p class="card-text">Que puis-je pour toi mon enfant ?</p>
+                                <p class="card-text bot-time small">17:12</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <nav class="navbar fixed-bottom navbar-light bg-dark">
-                <div class="container">
-                    <h4 class="text-light">Pose ta question à GrandPy !</h4>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Salut GrandPy ! Est-ce que tu connais l'adresse de..." aria-label="address" aria-describedby="button-addon2">
-                        <button class="btn btn-primary" type="button" id="button-addon2">GrandPapy, dis-m'en plus sur ce lieux !</button>
+            <div class="col-xs-12 col-md-12 col-lg-12 fixed-bottom navbar-light bg-dark" id="footer">
+                <form class="form-inline container">
+                    <h4 class="col-xs-12 col-md-12 col-lg-12 text-light">Pose ta question à GrandPy !</h4>
+                    <div class="col-xs-12 col-md-12 col-lg-12 form-group my-2">
+                        <label class="sr-only" for="questionInput">Question</label>
+                        <input type="text" class="col-xs-12 col-md-8 col-lg-8 form-control" id="questionInput" placeholder="Posez-votre question...">
+                        <button type="submit" class="col-xs-12 col-md-4 col-lg-4 btn btn-primary">Je demande à Papy </button>
                     </div>
-                    <hr class="my-4">
-                    <span class="col-md-12 text-center small"><a class="text-light" href="https://github.com/GuiThink" target="_blank">Auteur : Guillaume Pont | Suivez-moi sur GitHub !</a></span>
-                </div>
-            </nav>
+                    <div class="col-xs-12 col-md-12 col-lg-12 my-2 text-center">
+                        <a class="text-light small" href="https://github.com/GuiThink" target="_blank">Guillaume Pont | Suivez-moi sur GitHub !</a>
+                    </div>
+                </form>
+            </div>
         </div>
+        <div class="loader" id="loader"></div>
     </div>
-
-
-{#<div class="container">#}
-{#<div class="row">#}
-{#<div class="col-xs-12 col-sm-12 col-md-12">#}
-{#<iframe id="google_map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=paris&key=AIzaSyBVNw4X-qj0cJ0fJghPTPDh2AfjNFBBcGM" allowfullscreen></iframe>#}
-{#</div>#}
-{#</div>#}
-{#</div>#}
-
 {% endblock %}
