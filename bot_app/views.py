@@ -19,13 +19,12 @@ def process():
     quest = request.form['question']
     user = 'Rejeton'
     img = '/static/img/anonym_img.png'
-    posttime = time.strftime('%H:%M:%S')
 
     keyword = 'Paris'
     response = 'Paris est situé en France, en Île de France.'
 
     if keyword.lower() in quest.lower():
-        return jsonify({'question': quest, 'user': user, 'img': img, 'time': posttime, 'response': response})
+        return jsonify({'question': quest, 'user': user, 'img': img, 'response': response})
 
     return jsonify({'error': 'Missing data!'})
 
