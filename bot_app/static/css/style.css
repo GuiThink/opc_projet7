@@ -34,6 +34,10 @@
 
 /* CHAT BLOCK */
 
+#chat-wrapper {
+    height: 600px;
+}
+
 #chat-box {
     margin-bottom: 9rem;
     border-radius: .3rem;
@@ -101,7 +105,6 @@
 
 /* ANIMATIONS */
 
-
 /* LOADER */
 
 .loader {
@@ -127,4 +130,12 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+/* SCROLL */
+
+.scroll {
+    height:100%;
+    overflow-y: scroll;
 }

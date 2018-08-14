@@ -55,6 +55,7 @@ $(document).ready(function () {
                     "</div>").hide().fadeIn(500);
 
                 chatBox.append(newUserItem);
+                $('.scroll').animate({scrollTop: $('.scroll').get(0).scrollHeight}, 500);
             }
 
             event.preventDefault();
@@ -64,7 +65,7 @@ $(document).ready(function () {
     }
 
     function ajaxCall() {
-        $.post("/user-question"
+        $.post("/user-question", {question : 'test'}
         )
 
         .then(function (data) {
