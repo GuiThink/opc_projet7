@@ -108,17 +108,18 @@
 /* LOADER */
 
 .loader {
-    position:fixed;
+    /*position:fixed;
     top: 50%;
-    left: 50%;
-    border: 16px solid #f3f3f3;
+    left: 50%;*/
+    border: 16px solid #e9ecef;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #17a2b8;
     width: 20px;
     height: 20px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
-    display: none;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    margin: auto;
+    /*display: none;*/
 }
 
 /* Safari */
@@ -138,4 +139,10 @@
 .scroll {
     height:100%;
     overflow-y: scroll;
+}
+
+/* IFRAME */
+
+#google_map {
+    margin-top: 1rem;
 }
