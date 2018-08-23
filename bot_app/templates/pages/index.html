@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="chat-wrapper">
+        <div class="row scroll" id="chat-wrapper">
             <div class="col container bg-info" id="chat-box">
                 <div class="row bot-wrapper justify-content-start">
                     <div class="col-xs-12 col-md-8 col-lg-8">
@@ -31,7 +31,7 @@
                                 <img class="card-img-top" src="/static/img/papy_img.png" alt="papy-robot">
                             </div>
                             <div class="col-xs-4 col-md-0 col-lg-0"></div>
-                            <div class="col-xs-12 col-md-9 col-lg-10" id="initial-time">
+                            <div class="col-xs-12 col-md-9 col-lg-10 initial-time">
                                 <h5 class="card-title">GrandPy</h5>
                                 <p class="card-text">Que puis-je pour toi mon enfant ?</p>
                             </div>
@@ -46,7 +46,7 @@
                     <h4 class="col-xs-12 col-md-12 col-lg-12 text-light">Pose ta question à GrandPy !</h4>
                     <div class="col-xs-12 col-md-12 col-lg-12 form-group my-2">
                         <label class="sr-only" for="questionInput">Question</label>
-                        <input type="text" class="col-xs-12 col-md-8 col-lg-8 form-control" id="questionInput" placeholder="Posez-votre question...">
+                        <input type="text" class="col-xs-12 col-md-8 col-lg-8 form-control" id="questionInput" placeholder="Lieu recherché...">
                         <button type="submit" class="col-xs-12 col-md-4 col-lg-4 btn btn-primary">Je demande à Papy </button>
                     </div>
                     <div class="col-xs-12 col-md-12 col-lg-12 my-2 text-center">
@@ -55,6 +55,5 @@
                 </form>
             </div>
         </div>
-        <div class="loader" id="loader"></div>
     </div>
 {% endblock %}

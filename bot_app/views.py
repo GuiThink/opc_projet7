@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-import time
+from bot_app.models.parser import parse
+from bot_app.models.api_google import get_map
 
 app = Flask(__name__)
 
@@ -14,36 +15,21 @@ def page_not_found(error):
     return render_template('errors/404.html'), 404
 
 
-@app.route('/user-question', methods=['POST'])
+@app.route('/process', methods=['POST'])
 def process():
-    quest = request.form['question']
-    user = 'Rejeton'
-    img = '/static/img/anonym_img.png'
+    question = request.form['question']
+    location = str(parse(question))
+    google_url = str(get_map(location))
+    google_address = 'address...'
+    wikimedia_message = 'message...'
 
-    keyword = 'Paris'
-    response = 'Paris est situé en France, en Île de France.'
-
-    if keyword.lower() in quest.lower():
-        return jsonify({'question': quest, 'user': user, 'img': img, 'response': response})
-
-    return jsonify({'error': 'Missing data!'})
-
-
-@app.route('/get-map', methods=['GET'])
-def get_map(place):
-
-    google_map_api_url = 'https://www.google.com/maps/embed/v1/place?q='
-    key = 'AIzaSyBVNw4X-qj0cJ0fJghPTPDh2AfjNFBBcGM'
-    call_url = google_map_api_url + place + '&key=' + key
-
-    return call_url
-
+    return jsonify({'location': location, 'google_url': google_url, 'google_address': google_address,'wikimedia_message': wikimedia_message})
 
 
 # if __name__ == "__main__":
 #     app.run()
 
 
-# <iframe id="google_map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=paris&key=AIzaSyBVNw4X-qj0cJ0fJghPTPDh2AfjNFBBcGM" allowfullscreen></iframe>
+
 
 
