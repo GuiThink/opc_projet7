@@ -117,7 +117,7 @@ def parse(data):
                  "étant", "été",
                  "être", "ô"]
     extras = [".", "?", ":", ";", "/", "!", "-", "je", "tu", "il", "nous",
-              "vous", "ils", "elle", "elles", "l'adresse", "qu'elle"]
+              "vous", "ils", "elle", "elles", "l'adresse", "adresse", "qu'elle", "est-ce", "bonjour", "salut", "hello", "hey", "Grandpy"]
     verbs = ["dormir", "rapprocher", "chérir", "faxer", "deviner", "attenter", "applaudir", "durcir",
              "écouter", "aboutir", "diverger", "désespérer", "rémunérer", "ciseler", "rôder", "assainir",
              "bosser", "initier",
@@ -553,11 +553,14 @@ def parse(data):
              "cerner", "scier", "rependre", "faillir", "opérer", "pécher", "est", "est"]
     other = ["d'", "s'", "m'", "l'", "j'", "n'", "t'", "y'"]
 
-    word_list = stopwords + extras + verbs + other
-    parsed_string = data.split()
+    word_list = (stopwords + extras + verbs + other)
+    parsed_string = data.replace("'", " ").split()
 
-    for word in parsed_string:
-        if word in word_list:
-            parsed_string.remove(word)
-
+    parsed_string = [s for s in parsed_string if s.lower() not in (w.lower() for w in word_list)]
     return str(' '.join(parsed_string))
+
+
+#test
+data = "salut GrandPy ! est-ce que tu connais l'adresse d'OpenClassrooms ?"
+parsing = parse(data)
+print(parsing)

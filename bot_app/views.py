@@ -20,8 +20,10 @@ def process():
     question = request.form['question']
     location = str(parse(question))
     google_url = str(get_map(location))
+    google_address = 'address...'
+    wikimedia_message = 'message...'
 
-    return jsonify({'location': location, 'google_url': google_url})
+    return jsonify({'location': location, 'google_url': google_url, 'google_address': google_address,'wikimedia_message': wikimedia_message})
 
 
 # if __name__ == "__main__":

@@ -16,6 +16,13 @@
 }
 
 
+/* BODY */
+
+body {
+    background-color: #7d7d7d;
+}
+
+
 /* HEADER */
 
 #header {
@@ -139,6 +146,7 @@
 .scroll {
     height:100%;
     overflow-y: scroll;
+    background-color: transparent;
 }
 
 /* IFRAME */
