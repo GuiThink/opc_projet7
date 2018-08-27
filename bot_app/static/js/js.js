@@ -24,31 +24,6 @@ $(document).ready(function () {
     }
 
 
-/*    class Conversation {
-        constructor(phrase) {
-            this.phrase = phrase;
-            this.html = "<div class=\"row bot-wrapper justify-content-start\">" +
-                    "<div class=\"col-xs-12 col-md-8 col-lg-8\">" +
-                    "<div class=\"row bot\">" +
-                    "<div class=\"col-xs-4 col-md-0 col-lg-0\"></div>" +
-                    "<div class=\"col-xs-4 col-md-3 col-lg-2\">" +
-                    "<img class=\"card-img-top\" src=\"/static/img/papy_img.png\" alt=\"papy-robot\">" +
-                    "</div>" +
-                    "<div class=\"col-xs-4 col-md-0 col-lg-0\"></div>" +
-                    "<div class=\"col-xs-12 col-md-9 col-lg-10\">" +
-                    "<h5 class=\"card-title\">GrandPy</h5>" +
-                    "<p class=\"card-text dynamic-area\">" + this.phrase + "</p>" +
-                    "<div class=\"loader\" id=\"loader\"></div>" +
-                    "<p class=\"card-text bot-time small\">" + new Time().time + "</p>" +
-                    "</div>" +
-                    "</div>" +
-                    "</div>" +
-                    "</div>"
-        }
-    }
-*/
-
-
     function setTime(time) {
         $('.initial-time').append("<p class=\"card-text bot-time small\">" + time + "</p>");
     }
@@ -107,16 +82,16 @@ $(document).ready(function () {
 
                 $.post("/process", {"question": questionInput.val()}).then(function (data) {
                     const question = data.question;
-                    const google_url = data.google_url;
-                    const google_address = data.address;
+                    const place_iframe_url = data.place_iframe_url;
+                    const place_address = data.place_address;
                     const wikimedia_message = data.message;
 
                     console.log(question);
 
                     $('.loader').hide();
                     const dynamicArea = $('.dynamic-area');
-                    const iframe = $("<iframe id=\"google_map\" width=\"100%\" height=\"250px\" frameborder=\"0\" style=\"border:0\" src=\""+ google_url +"\" allowfullscreen></iframe>");
-                    dynamicArea.text("Attends voir...que je réfléchisse une seconde. Bien sûr mon poussin ! La voici : " + google_address);
+                    const iframe = $("<iframe id=\"google_map\" width=\"100%\" height=\"250px\" frameborder=\"0\" style=\"border:0\" src=\""+ place_iframe_url +"\" allowfullscreen></iframe>");
+                    dynamicArea.text("Attends voir...que je réfléchisse une seconde. Bien sûr mon poussin ! La voici : " + place_address);
                     dynamicArea.append(iframe);
 
                 });

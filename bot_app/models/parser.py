@@ -2,9 +2,13 @@
 # coding: utf-8
 
 
-def parse(data):
+class Parser:
+    """
+    This class parses the query sent from Client-side so the
+    resulting string can then be used for Google API calls.
+    """
 
-    stopwords = ["a", "abord", "absolument", "afin", "ah", "ai", "aie", "ailleurs", "ainsi", "ait", "allaient",
+    STOPWORDS = ["a", "abord", "absolument", "afin", "ah", "ai", "aie", "ailleurs", "ainsi", "ait", "allaient",
                  "allo",
                  "allons", "allô", "alors", "anterieur", "anterieure", "anterieures", "apres", "après", "as",
                  "assez",
@@ -116,9 +120,7 @@ def parse(data):
                  "vôtres", "w", "x", "y", "z", "zut", "à", "â", "ça", "ès", "étaient", "étais", "était",
                  "étant", "été",
                  "être", "ô"]
-    extras = [".", "?", ":", ";", "/", "!", "-", "je", "tu", "il", "nous",
-              "vous", "ils", "elle", "elles", "l'adresse", "adresse", "qu'elle", "est-ce", "bonjour", "salut", "hello", "hey", "Grandpy"]
-    verbs = ["dormir", "rapprocher", "chérir", "faxer", "deviner", "attenter", "applaudir", "durcir",
+    VERBS = ["dormir", "rapprocher", "chérir", "faxer", "deviner", "attenter", "applaudir", "durcir",
              "écouter", "aboutir", "diverger", "désespérer", "rémunérer", "ciseler", "rôder", "assainir",
              "bosser", "initier",
              "forger", "vendre", "fendre", "mordre", "chanceler", "habituer", "décrier", "défoncer", "charger",
@@ -399,7 +401,7 @@ def parse(data):
              "habiter",
              "conduire", "assimiler", "priver", "engueuler", "solutionner", "dépasser", "recouvrer", "envoler",
              "nommer",
-             "acheminer", "relâcher", "masser", "sous","stocker", "illustrer", "brunir", "vouvoyer",
+             "acheminer", "relâcher", "masser", "sous", "stocker", "illustrer", "brunir", "vouvoyer",
              "coudre",
              "ouvrer",
              "charmer", "déguster", "urger", "savourer", "déglutir", "harceler", "marrer", "assembler",
@@ -551,16 +553,26 @@ def parse(data):
              "homogénéiser", "consoler", "sangloter", "reparaître", "admirer", "organiser", "compiler",
              "implanter",
              "cerner", "scier", "rependre", "faillir", "opérer", "pécher", "est", "est"]
-    other = ["d'", "s'", "m'", "l'", "j'", "n'", "t'", "y'"]
+    OTHERS = [".", "?", ":", ";", "/", "!", "-", "je", "tu", "il", "nous", "d'", "s'", "m'", "l'", "j'", "n'", "t'", "y'",
+              "vous", "ils", "elle", "elles", "l'adresse", "adresse", "qu'elle", "est-ce", "bonjour", "salut", "hello",
+              "hey", "Grandpy"]
 
-    word_list = (stopwords + extras + verbs + other)
-    parsed_string = data.replace("'", " ").split()
+    def __init__(self, query):
+        self.query = query
+        self.parsed = self.parse(self.query)
 
-    parsed_string = [s for s in parsed_string if s.lower() not in (w.lower() for w in word_list)]
-    return str(' '.join(parsed_string))
+    def parse(self, query: str) -> str:
+        """
+        Clean the initial query and then compare it to a list of words.
+        If one or more words from the initial query are found in the list,
+        then these words are removed and a cleaned query is returned.
+        """
+        word_list = (self.STOPWORDS + self.VERBS + self.OTHERS)
+        parsed_string = query.replace("'", " ").split()
+        parsed_string = [s for s in parsed_string if s.lower() not in (w.lower() for w in word_list)]
+        return str(' '.join(parsed_string))
 
 
-#test
-data = "salut GrandPy ! est-ce que tu connais l'adresse d'OpenClassrooms ?"
-parsing = parse(data)
-print(parsing)
+# FOR TESTING PURPOSE :
+# data = Parser("salut GrandPy ! est-ce que tu connais l'adresse d'OpenClassrooms ?")
+# print(data.parsed)
